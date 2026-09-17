@@ -1,4 +1,4 @@
-# Stage 1 — Build
+# Stage 1 
 FROM node:22-alpine AS builder
 
 WORKDIR /app
@@ -15,9 +15,10 @@ ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
 ARG VITE_MAPBOX_TOKEN
 ENV VITE_MAPBOX_TOKEN=$VITE_MAPBOX_TOKEN
 
+
 RUN npm run build
 
-# Stage 2 — Serve
+# Stage 2
 FROM nginx:alpine
 
 # Remove default nginx static files
